@@ -68,12 +68,12 @@ body{font-family:var(--fnt);background:#f0f0f0;display:flex;flex-direction:colum
 .stl-card{background:#fff;padding:.875rem .75rem 1rem;display:flex;flex-direction:column;gap:.4rem;cursor:pointer;transition:background .15s;position:relative;flex-shrink:0}
 .stl-card:hover,.stl-card.on{background:#fafafa}
 .stl-card.on::after{content:'';position:absolute;inset:0;border:2px solid var(--acc);pointer-events:none}
-.stl-card-img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#f0f0f0;border-radius:6px}
-.stl-card-name{font-size:14px;font-weight:600;color:var(--col);line-height:1.3}
+.stl-card-img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#f0f0f0;border-radius:6px}
+.stl-card-name{font-size:12px;font-weight:600;color:var(--col);line-height:1.3}
 .stl-card-prices{display:flex;flex-direction:column;gap:1px;margin-top:2px}
-.stl-card-price{font-size:16px;color:var(--col);font-weight:600}
-.stl-card-old{font-size:13px;color:#aaa;text-decoration:line-through}
-.stl-card-btn{margin-top:auto;padding:8px 10px;background:var(--acc);color:#fff;font-size:14px;font-weight:600;border:none;border-radius:6px;cursor:pointer;transition:opacity .15s;text-align:center}
+.stl-card-price{font-size:14px;color:var(--col);font-weight:600}
+.stl-card-old{font-size:11px;color:#aaa;text-decoration:line-through}
+.stl-card-btn{margin-top:auto;padding:8px 10px;background:var(--acc);color:#fff;font-size:12px;font-weight:600;border:none;border-radius:6px;cursor:pointer;transition:opacity .15s;text-align:center}
 .stl-card-btn:hover{opacity:.8}
 .stl-card-num{position:absolute;top:6px;right:6px;background:var(--acc);color:#fff;width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
 .stl-addall{display:block;width:100%;padding:13px 10px;background:var(--acc);color:#fff;font-family:var(--fnt);font-size:14px;font-weight:700;border:none;cursor:pointer;text-align:center;flex-shrink:0;transition:opacity .15s}
@@ -847,12 +847,12 @@ function doExport() {
 '.stl-module .stl-card{background:#fff;padding:.875rem .75rem 1rem;display:flex;flex-direction:column;gap:.4rem;cursor:pointer;position:relative;transition:background .15s;flex-shrink:0}\n'+
 '.stl-module .stl-card:hover,.stl-module .stl-card.on{background:#fafafa}\n'+
 '.stl-module .stl-card.on::after{content:\'\';position:absolute;inset:0;border:2px solid var(--acc);pointer-events:none}\n'+
-'.stl-module .stl-card-img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#f0f0f0;border-radius:6px}\n'+
-'.stl-module .stl-card-name{font-size:14px;font-weight:600;color:#3D3D3C;line-height:1.3;font-family:\'Montserrat\',sans-serif}\n'+
+'.stl-module .stl-card-img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#f0f0f0;border-radius:6px}\n'+
+'.stl-module .stl-card-name{font-size:12px;font-weight:600;color:#3D3D3C;line-height:1.3;font-family:\'Montserrat\',sans-serif}\n'+
 '.stl-module .stl-card-prices{display:flex;flex-direction:column;gap:1px;margin-top:2px}\n'+
-'.stl-module .stl-card-price{font-size:16px;font-weight:600;color:#3D3D3C;font-family:\'Montserrat\',sans-serif}\n'+
-'.stl-module .stl-card-old{font-size:13px;color:#aaa;text-decoration:line-through}\n'+
-'.stl-module .stl-card-btn{margin-top:auto;padding:8px 10px;background:var(--acc);color:#fff;font-size:14px;font-weight:600;border:none;border-radius:6px;cursor:pointer;font-family:\'Montserrat\',sans-serif;text-align:center}\n'+
+'.stl-module .stl-card-price{font-size:14px;font-weight:600;color:#3D3D3C;font-family:\'Montserrat\',sans-serif}\n'+
+'.stl-module .stl-card-old{font-size:11px;color:#aaa;text-decoration:line-through}\n'+
+'.stl-module .stl-card-btn{margin-top:auto;padding:8px 10px;background:var(--acc);color:#fff;font-size:12px;font-weight:600;border:none;border-radius:6px;cursor:pointer;font-family:\'Montserrat\',sans-serif;text-align:center}\n'+
 '.stl-module .stl-card-num{position:absolute;top:6px;right:6px;background:var(--acc);color:#fff;width:18px;height:18px;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}\n'+
 '.stl-module .stl-addall{display:block;width:100%;padding:13px 10px;background:var(--acc);color:#fff;font-family:\'Montserrat\',sans-serif;font-size:14px;font-weight:700;border:none;cursor:pointer;text-align:center}\n'+
 '.stl-module .stl-addall:disabled{opacity:.45;cursor:not-allowed}\n'+
@@ -929,7 +929,14 @@ function doExport() {
 '}\n'+
 'function tog(i){if(aid===i){clr();return;}clr();aid=i;var c=grid.querySelectorAll(\'.stl-card\'),t=zone.querySelectorAll(\'.stl-tag\'),tp=zone.querySelectorAll(\'.stl-tip\');if(c[i])c[i].classList.add(\'on\');if(t[i])t[i].classList.add(\'on\');if(tp[i])tp[i].classList.add(\'show\');}\n'+
 'function clr(){aid=null;document.querySelectorAll(\'#shopTheLook .on\').forEach(function(e){e.classList.remove(\'on\');});document.querySelectorAll(\'#shopTheLook .stl-tip.show\').forEach(function(e){e.classList.remove(\'show\');});}\n'+
-'zone.addEventListener(\'click\',clr);window.addEventListener(\'resize\',syncH);render();\n'+
+'zone.addEventListener(\'click\',clr);window.addEventListener(\'resize\',syncH);\n'+
+(pageType === 'pdp' ?
+'/* PDP page targeting — only render on product pages that are part of this look */\n'+
+'var _cur=window.location.pathname;\n'+
+'var _match=P.some(function(p){if(!p.url)return false;try{return new URL(p.url).pathname===_cur;}catch(e){return p.url.indexOf(_cur)>-1;}});\n'+
+'if(_match)render();\n'
+:
+'render();\n')+
 '})();\n'+
 '<\/script>';
 
